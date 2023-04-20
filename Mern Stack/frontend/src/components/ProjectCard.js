@@ -34,7 +34,7 @@ const ProjectCard = () => {
 
     // Fetch all projects
     const fetchProjects = async () => {
-      const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/projects/all', {
+      const response = await fetch('/api/projects/all', {
         headers: {'Authorization': `Bearer ${user.token}`},
       })
       const json = await response.json()

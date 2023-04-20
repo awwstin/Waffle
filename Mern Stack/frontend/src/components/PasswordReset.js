@@ -25,7 +25,7 @@ const PasswordReset = () => {
               position: "top-center",
             });
           } else {
-            const res = await fetch("${process.env.REACT_APP_BACKEND_URL}/api/user/sendpasswordlink", {
+            const res = await fetch("/api/user/sendpasswordlink", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

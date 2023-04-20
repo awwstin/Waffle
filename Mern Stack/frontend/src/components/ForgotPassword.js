@@ -19,7 +19,7 @@ const ForgotPassword = () => {
     const [message, setMessage] = useState("");
 
     const userValid = async () => {
-        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/forgotpassword/${email}/${token}`, {
+        const res = await fetch(`/api/user/forgotpassword/${email}/${token}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -52,7 +52,7 @@ const ForgotPassword = () => {
         } else if (!validator.isStrongPassword(password)) {
             toast.error('Password not strong enough. Password must contain a combination of uppercase letters, lowercase letters, numbers, and symbols.')
         } else {
-            const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/api/user/${email}/${token}`, {
+            const res = await fetch(`/api/user/${email}/${token}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
