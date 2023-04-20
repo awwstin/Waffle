@@ -12,7 +12,7 @@ const Home = () => {
   
   useEffect(() => {
     const fetchProjects = async () => {
-      const response = await fetch('/api/projects/cp', {
+      const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/projects/cp', {
         headers: {'Authorization': `Bearer ${user.token}`},
       })
       const json = await response.json()

@@ -13,7 +13,7 @@ const ProjectDetails = ({ project }) => {
       return
     }
 
-    const response = await fetch('/api/projects/' + project._id, {
+    const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/projects/' + project._id, {
       method: 'DELETE',
       headers: {
         'Authorization': `Bearer ${user.token}`

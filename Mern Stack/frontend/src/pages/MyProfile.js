@@ -20,7 +20,7 @@ const Profile = () => {
         return
       }
       try {
-        const response = await fetch('/api/user/profile', {
+        const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/user/profile', {
           headers: { 'Authorization': `Bearer ${token}` }
         })
         const json = await response.json()

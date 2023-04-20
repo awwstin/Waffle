@@ -76,7 +76,7 @@ const ProjectForm = () => {
   
     const project = {title, description, tags: Array.from(selectedTags), nums}
 
-    const response = await fetch('/api/projects/', {
+    const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/projects/', {
       method: 'POST',
       body: JSON.stringify(project),
       headers: {

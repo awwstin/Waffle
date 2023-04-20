@@ -10,7 +10,7 @@ export const useProfile = () => {
     setIsLoading(true);
     setError(null);
 
-    const response = await fetch('/api/user/profile', {
+    const response = await fetch('${process.env.REACT_APP_BACKEND_URL}/api/user/profile', {
       method: 'PUT',
       headers: {
         "Content-Type": "application/json",
